@@ -2,6 +2,8 @@
 
 Ipgeobase is a Ruby gem for retrieving location data based on an IP address using the ip-api.com service.
 
+[![Tests](https://github.com/MarinaMoskaleva/ipgeobase/actions)](https://github.com/MarinaMoskaleva/ipgeobase/actions)
+
 ## Installation
 
 Add this line to your application's Gemfile:
