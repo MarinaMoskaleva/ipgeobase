@@ -24,6 +24,9 @@ GEM
     json (2.6.3)
     language_server-protocol (3.17.0.3)
     minitest (5.20.0)
+    minitest-power_assert (0.3.1)
+      minitest
+      power_assert (>= 1.1)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
@@ -34,6 +37,7 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
+    power_assert (2.0.3)
     public_suffix (5.0.3)
     racc (1.7.3)
     rainbow (3.1.1)
@@ -75,6 +79,7 @@ DEPENDENCIES
   faraday (~> 2.7)
   ipgeobase!
   minitest (~> 5.0)
+  minitest-power_assert
   nokogiri-happymapper (~> 0.9)
   rake (~> 13.0)
   rubocop (~> 1.21)
