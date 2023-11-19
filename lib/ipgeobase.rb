@@ -1,38 +1,17 @@
 # frozen_string_literal: true
 
 require_relative "ipgeobase/version"
+require_relative "location"
 require "faraday"
 require "json"
 require "happymapper"
 
-# The Location class represents geographic location information
-# parsed from IP geolocation API responses. It provides a structured
-# representation of latitude, longitude, city, country, and country code.
-class Location
-  include HappyMapper
-
-  attr_accessor :lat, :lon, :city, :country, :country_code
-
-  def self.parse(data)
-    doc = HappyMapper.parse(data)
-    location = new
-
-    location.lat = doc.lat.to_f
-    location.lon = doc.lon.to_f
-    location.city = doc.city
-    location.country = doc.country
-    location.country_code = doc.country_code
-
-    location
-  end
-end
-
 # Ipgeobase module provides functionality for looking up location data based on IP address.
 module Ipgeobase
   class Error < StandardError; end
-  class << self
-    BASE_URL = "http://ip-api.com/xml/"
 
+  BASE_URL = "http://ip-api.com/xml/"
+  class << self
     def lookup(ip)
       raise ArgumentError, "Invalid IP address format" unless valid_ip?(ip)
 

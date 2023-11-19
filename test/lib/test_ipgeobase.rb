@@ -3,7 +3,6 @@
 require_relative "../test_helper"
 # Test class for the Ipgeobase module.
 class TestIpgeobase < TestCase
-  BASE_URL = "http://ip-api.com/xml/"
   GOOGLE_IP = "8.8.8.8"
 
   def test_that_it_has_a_version_number
@@ -29,7 +28,7 @@ class TestIpgeobase < TestCase
     actual_data = [
       data.city,
       data.country,
-      data.country_code,
+      data.countryCode,
       data.lat,
       data.lon
     ]
@@ -39,7 +38,7 @@ class TestIpgeobase < TestCase
   private
 
   def stub_request_data
-    stub_request(:get, "#{BASE_URL}#{GOOGLE_IP}")
+    stub_request(:get, "#{Ipgeobase::BASE_URL}#{GOOGLE_IP}")
       .to_return(status: 200, body: load_fixture("response.xml"), headers: {})
   end
 
