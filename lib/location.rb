@@ -8,9 +8,9 @@ require "happymapper"
 class Location
   include HappyMapper
   tag "query"
-    element :country, String
-    element :countryCode, String, tag: "countryCode"
-    element :city, String
-    element :lat, Float
-    element :lon, Float
+  element :country, String
+  element :countryCode, String, tag: "countryCode"
+  element :city, String
+  element :lat, Float
+  element :lon, Float
 end
